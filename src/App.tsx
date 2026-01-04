@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar, ProtectedRoute, GuestRoute } from './components';
-import { Login, Register, Dashboard } from './pages';
+import { Login, Register, Dashboard, Docs } from './pages';
 
 export function App() {
   return (
@@ -8,6 +8,7 @@ export function App() {
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <Routes>
+          <Route path="/docs" element={<Docs />} />
           <Route element={<GuestRoute />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
